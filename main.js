@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".hello").style.zIndex= "-1";
             // landing text 
             let text = document.querySelector(".main .main-card h2 span");
-            let txt ="Frontend  Developer";
+            let txt ="RONTEND DEVELOPER";
     
     
     

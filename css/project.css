@@ -40,23 +40,30 @@ html{
     background-color: var(--greywight);
 }
 
-.aside a{
+.aside a {
     text-decoration: none;
     color: #f0f0f0;
     background-color: var(--blue);
     text-align: center;
-    width: 80%;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-    transition: 0.3s;
-    border-radius: 6px;
+    width: 60%;
+    padding: 8px 16px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-.aside a:hover ,.aside a:active{
+
+.aside a:hover, .aside a:active {
     background-color: var(--greywight);
     color: var(--blue);
-    box-shadow: 0px 0px 15px var(--blue);
-
+    box-shadow: 0px 0px 20px rgba(58, 108, 244, 0.6); /* Softer shadow */
+    transform: scale(0.97); /* Subtle scaling */
+    transition: all 0.4s ease-in-out; /* Slower, smoother hover effect */
 }
+
 
 .aside p{
     margin-top: 30px;
@@ -192,4 +199,20 @@ html, body {
 
 ::-webkit-scrollbar {
     display: none; /* Hides scrollbar in Chrome, Safari, and Edge */
+}
+
+
+.discreption{
+    width: 90%;
+    text-align: center;
+    font-size: 15px;
+    
+}
+
+.discreption h2{
+    font-size: 20px;
+    padding: 0;
+}
+.discreption p{
+    padding: 0;
 }

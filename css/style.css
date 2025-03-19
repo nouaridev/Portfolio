@@ -24,15 +24,18 @@
     --greywight: #f0f0f0;
     --lightwhite:#fff;
     --darkblue:#000016;
-
-
+    --headerblur:  rgba(105, 105, 105, 0.274);
+    
     --hue: 223;
 	--bg: hsl(var(--hue),10%,90%);
 	--fg: hsl(var(--hue),10%,10%);
+
+
+
+
+    
 	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
 }
-
-
 
 
 
@@ -182,7 +185,7 @@ section {
 
  
 header{
-    background-color: rgba(61, 61, 61, 0.274);
+    background-color: var(--headerblur);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -221,7 +224,7 @@ header .navigation a{
     justify-content: center;
     align-items: center;
     padding: 0 10px;
-   background-color: var(--blue);
+   /* background-color: var(--blue); */
     transition: .1s;
     animation: light 3s 1s ease  infinite ;
     
@@ -394,6 +397,8 @@ canvas{
     transform: scale(1.1 , 1.1);
     box-shadow: 0px 0px 10px var(--blue);
 }
+
+
 
 
 .main .main-card .social-media{
