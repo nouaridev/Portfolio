@@ -96,9 +96,8 @@ video{
     }
 }
 
-
-
 /* hello */
+
 .hello{
     position: fixed;
     top: 0;
@@ -129,8 +128,8 @@ video{
 .pl {
 	animation-name: bump;
 	animation-timing-function: linear;
-	width: 8em;
-	height: 8em;
+	width: 2em;
+	height: 2em;
 }
 .pl__ring {
 	stroke: hsla(var(--hue),10%,10%,0.1);
@@ -182,4 +181,15 @@ video{
 	from { stroke-dashoffset: 10; }
 	25% { stroke-dashoffset: 295; }
 	to { stroke-dashoffset: 1165; }
+}
+
+
+html, body {
+    overflow: auto; /* Ensures scrolling still works */
+    -ms-overflow-style: none; /* Hides scrollbar in Edge/IE */
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+}
+
+::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Chrome, Safari, and Edge */
 }

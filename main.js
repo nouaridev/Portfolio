@@ -1,34 +1,35 @@
-document.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", function () {
     setTimeout(()=>{
-        document.querySelector(".hello").style.display = "none";
-    },4000)
-
-    // landing text 
-        let text = document.querySelector(".main .main-card h2 span");
-        let txt ="Frontend  Developer";
-
-
-
-        txt= txt.split("");
-        setTimeout(()=>{
-            
-        let o = 1;
-
-        let wr =setInterval(
-            ()=> {  
-                o++;
-                text.append(txt[o-1])
-                if( o == txt.length ){
-                    clearInterval(wr)
+        document.querySelector(".hello").style.opacity= "0";
+        document.querySelector(".hello").style.zIndex= "-1";
+            // landing text 
+            let text = document.querySelector(".main .main-card h2 span");
+            let txt ="Frontend  Developer";
+    
+    
+    
+            txt= txt.split("");
+            setTimeout(()=>{
+                
+            let o = 1;
+    
+            let wr =setInterval(
+                ()=> {  
+                    o++;
+                    text.append(txt[o-1])
+                    if( o == txt.length ){
+                        clearInterval(wr)
+                    }
                 }
-            }
-            , 100
-        )
-        } , 1000)
+                , 100
+            )
+            } , 1000)
+    
+    
+            //landing image
+            document.querySelector(".main .main-card").classList.add("hv")
+    },3000)
 
-
-        //landing image
-        document.querySelector(".main .main-card").classList.add("hv")
 });
 
 
