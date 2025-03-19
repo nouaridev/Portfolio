@@ -1,35 +1,32 @@
-document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(()=>{
-        document.querySelector(".hello").style.opacity= "0";
-        document.querySelector(".hello").style.zIndex= "-1";
-            // landing text 
-            let text = document.querySelector(".main .main-card h2 span");
-            let txt ="RONTEND DEVELOPER";
-    
-    
-    
-            txt= txt.split("");
-            setTimeout(()=>{
-                
-            let o = 1;
-    
-            let wr =setInterval(
-                ()=> {  
-                    o++;
-                    text.append(txt[o-1])
-                    if( o == txt.length ){
-                        clearInterval(wr)
-                    }
-                }
-                , 100
-            )
-            } , 1000)
-    
-    
-            //landing image
-            document.querySelector(".main .main-card").classList.add("hv")
-    },3000)
+window.addEventListener("load", function () {
+    setTimeout(() => {
+        let helloElement = document.querySelector(".hello");
 
+        if (helloElement) {
+            helloElement.style.opacity = "0";
+            helloElement.style.zIndex = "-1";
+        }
+
+        // بعد إخفاء ".hello"، يمكن تشغيل باقي الكود
+        let text = document.querySelector(".main .main-card h2 span");
+        let txt = "RONTEND DEVELOPER"; // تأكد أن النص صحيح
+
+        txt = txt.split("");
+        setTimeout(() => {
+            let o = 0;
+            let wr = setInterval(() => {
+                if (o < txt.length) {
+                    text.append(txt[o]);
+                    o++;
+                } else {
+                    clearInterval(wr);
+                }
+            }, 100);
+        }, 1000);
+
+        // إضافة كلاس للـ landing image
+        document.querySelector(".main .main-card").classList.add("hv");
+    }, 3000);
 });
 
 
