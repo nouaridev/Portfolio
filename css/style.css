@@ -37,6 +37,8 @@
 
 
 
+
+
 *{
 font-family: 'Poppins', sans-serif;
 padding: 0; 
@@ -180,7 +182,7 @@ section {
 
  
 header{
-    background-color: var(--darkblue);
+    background-color: rgba(61, 61, 61, 0.274);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -189,6 +191,7 @@ header{
     width: 100%;
     z-index: 3;
     padding: 5px 500px;
+    backdrop-filter: blur(100px);
 }
 header .logo{
     color: var(--blue);
@@ -204,19 +207,26 @@ header .navigation{
     display:flex;
     width: 30%;
     justify-content: space-between;
+    max-width: 500px;
+    min-height: 50px;
+    align-items: center;
 }
 
 header .navigation a{
-    color: var(--blue);
+    color: var(--greywight);
     font-size: 20px;
-    height: 40px;
+    min-height: 40px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0 10px;
+   background-color: var(--blue);
     transition: .1s;
     animation: light 3s 1s ease  infinite ;
+    
+    width: 100px;
+    
 }
 header .navigation a:hover{
     background-color: var(--blue);
@@ -412,14 +422,18 @@ canvas{
     background-color: var(--lightwhite);
    
     text-align: center;
+  
 }
 
 
 .services .cards{
+    margin: auto;
     display: grid;
     justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+    max-width: 900px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 30px 20px;
+    
 }
 
 .services .card{
@@ -481,10 +495,11 @@ canvas{
     border-radius: 30px;
     grid-row-start: 1;
     grid-column-start: 1;
-    transition: 1s;
+    transition: 0.6s;
     position: relative;
     margin-bottom: 30px;
     text-shadow: 0 0  3px var(--blue);
+    overflow: hidden;
 }
 .projects .cards a img{
     width: 100%;
@@ -506,21 +521,28 @@ canvas{
     align-items: center;
     font-size: 4VW;
     font-weight: 900;
-    opacity: 0;
+    opacity: 1;
     z-index: -1;
     color: #eee;
     text-shadow: 0 0  3px var(--blue);
+    transition: .6s;
+    transform: translateY(100%);
 }
 
 .projects .cards a:hover .desc{
     z-index: 1;
     opacity: 1;
+    background-color: #000016c9;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    transform: translateY(0); 
   
 }
 .projects .cards a:hover{
     transform: scale(1.1 ,1.1);
     transform-style: preserve-3d;
-    box-shadow: 0 0 90px var(--blue);
+    box-shadow: 0 0 30px var(--blue) ;
 }
 
 .projects .cards a.active{
@@ -707,6 +729,9 @@ footer .social-media i:hover{
 
 
 /* end */
+@media only screen and (max-width:250px) {  canvas{
+    display: none;
+}}
 @media only screen and (min-width:250px) {
     section{
         padding: 30px 5px;
@@ -731,6 +756,8 @@ footer .social-media i:hover{
     header .navigation a{
         font-size: 10px;
         height: 30px;
+
+        margin: 0 5px;
     }
 
     header .logo{
@@ -858,6 +885,9 @@ footer .social-media i:hover{
             background-position: right top;
             background-size: 450vw;
         }
+        }
+        canvas{
+            display: none;
         }
 }
 
@@ -1024,7 +1054,8 @@ footer .social-media i:hover{
     }
     header{
         padding: 5px 10px;
-        flex-direction: row;
+       
+        align-items: center;
     }
     footer{
         padding: 30px 10px;
@@ -1036,6 +1067,8 @@ footer .social-media i:hover{
     /* header */
     header .navigation{
         width: 50%;
+    
+        justify-content: center;
     }
     
     header .navigation a{
@@ -1295,6 +1328,7 @@ footer .social-media i:hover{
     }
     header{
         padding: 5px 200px;
+        flex-direction: row;
     }
     footer{
         padding: 30px 200px;
