@@ -1,3 +1,35 @@
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".hello").style.display = "none";
+
+    // landing text 
+        let text = document.querySelector(".main .main-card h2 span");
+        let txt ="Frontend  Developer";
+
+
+
+        txt= txt.split("");
+        setTimeout(()=>{
+            
+        let o = 1;
+
+        let wr =setInterval(
+            ()=> {  
+                o++;
+                text.append(txt[o-1])
+                if( o == txt.length ){
+                    clearInterval(wr)
+                }
+            }
+            , 100
+        )
+        } , 1000)
+
+
+        //landing image
+        document.querySelector(".main .main-card").classList.add("hv")
+});
+
+
 let imgs = document.querySelectorAll(".projects .cards a");
 let nxtbtn = document.querySelector(".slide-controlers .next");
 let prevbtn = document.querySelector(".slide-controlers .prev");
@@ -67,126 +99,6 @@ incarr.forEach(el => el.addEventListener("click", ()=> {
 
 
 
-// cards hover effect 
-
-let cards= document.querySelectorAll(".contact.c2 .cards .card");
-console.log(cards)
-
-// for(let i=0 ; i<cards.length ;i++){
-//     setTimeout(()=>{
-//         for(let j = 0 ; j < cards.length; j++){
-//             if(j == i){
-//                 cards[j].classList.add("hovered")
-//             }else{
-//                 cards[j].classList.remove("hovered")
-//             }console.log(cards[i])
-//         }
-//     },4000)
-// }
-let i =-1; 
-setInterval(
-    ()=>{
-        i++; 
-        for(let j = 0 ;j<cards.length ;j++){
-            if(j == i){
-                cards[j].classList.add("hovered")
-                }else{
-                cards[j].classList.remove("hovered")
-                }
-        }
-        if(i == cards.length){i=-1}
-    }
-    ,700
-)
-let im = setInterval(()=>{
-    window.localStorage.slnum = +window.localStorage.slnum + 1 ; 
-    update();
-    if( window.localStorage.slnum == imgs.length ){
-        window.localStorage.slnum = 0; nxtbtn.classList.remove("disabled");
-    }
-},3000)
-
-
-// landing text 
-let text = document.querySelector(".main .main-card h2 span");
-let txt ="Frontend  Developer";
-
-
-
-txt= txt.split("");
-setTimeout(()=>{
-    
-let o = 1;
-
-let wr =setInterval(
-     ()=> {  
-         o++;
-         text.append(txt[o-1])
-         if( o == txt.length ){
-             clearInterval(wr)
-         }
-     }
-     , 100
- )
-} , 15000)
-
-    
-setTimeout(
-    ()=>{
-        document.querySelector(".hello").style.opacity = "1";
-        document.querySelector(".hello").style.zIndex = "4";
-    },0
-)
-setTimeout(
-    ()=>{
-        window.scroll(0,0)
-      
-    },0
-)
-// setTimeout(
-//     ()=>{
-//         window.scroll(0,1500)
-//     },5000
-// )
-// setTimeout(
-//     ()=>{
-//         window.scroll(0,2000)
-//     },5500
-// )
-// setTimeout(
-//     ()=>{
-//         window.scroll(0,2500)
-//     },6000
-// )
-// setTimeout(
-//     ()=>{
-//         window.scroll(0,3000)
-//     },6500
-// )
-// setTimeout(
-//     ()=>{
-//         window.scroll(0,4000)
-//     },7000
-// )
-setTimeout(
-    ()=>{
- 
-        document.querySelector(".hello").style.opacity = "0";
-
-    },14500
-)
-
-setTimeout(
-    ()=>{
-        document.querySelector(".hello").style.zIndex = "-1";
-    },15000
-)
-
-setTimeout(
-    ()=>{ 
-        document.querySelector(".main .main-card").classList.add("hv")
-    },9000
-)
 
 
 
@@ -209,6 +121,3 @@ setTimeout(
 
 
 
-window.onload = function (){
-    document.querySelector("audio").play();
-}
