@@ -1,5 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".hello").style.display = "none";
+document.addEventListener("load", function () {
+    setTimeout(()=>{
+        document.querySelector(".hello").style.display = "none";
+    },4000)
 
     // landing text 
         let text = document.querySelector(".main .main-card h2 span");
